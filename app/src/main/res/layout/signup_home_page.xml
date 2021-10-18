@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444145"
+    tools:context="signup_home_page">
+
+    <Button
+        android:id="@+id/signupAsDriv"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="315dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="64dp"
+        android:text="As Driver"
+        android:textColorHighlight="#FFC107"
+        android:typeface="normal"
+        android:verticalScrollbarPosition="defaultPosition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signupasLundry" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="162dp"
+        android:layout_height="137dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.114"
+        app:srcCompat="@drawable/double_clck_meow_logo" />
+
+    <Button
+        android:id="@+id/signupascust"
+        android:layout_width="315dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="88dp"
+        android:onClick="signuphom"
+        android:shadowColor="#FFC107"
+        android:text="As Customer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/signupasLundry"
+        android:layout_width="315dp"
+        android:layout_height="52dp"
+        android:text="As Lundry Shop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signupascust"
+        app:layout_constraintVertical_bias="0.182" />
+</androidx.constraintlayout.widget.ConstraintLayout>

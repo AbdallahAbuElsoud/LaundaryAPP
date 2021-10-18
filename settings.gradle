@@ -1,0 +1,2 @@
+rootProject.name = "Double_Click_M_Project"
+include ':app'

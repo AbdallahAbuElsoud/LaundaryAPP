@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444145"><![CDATA[
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444145"
+    tools:context=".MainActivity">
+
+
+
+
+
+
+
+    ]]>
+
+    <EditText
+        android:id="@+id/signupname2"
+        android:layout_width="313dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="User Name"
+        android:inputType="textPersonName"
+        android:textColorHint="@android:color/holo_orange_light"
+        app:layout_constraintBottom_toTopOf="@+id/signupname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome"
+        app:layout_constraintVertical_bias="0.366" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="162dp"
+        android:layout_height="137dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045"
+        app:srcCompat="@drawable/double_clck_meow_logo" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="260dp"
+        android:layout_height="22dp"
+        android:clickable="false"
+        android:ellipsize="middle"
+        android:gravity="center"
+        android:text="Welcome"
+        android:textAlignment="inherit"
+        android:textColor="@android:color/holo_orange_light"
+        android:textColorHighlight="#FD0505"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <EditText
+        android:id="@+id/signupname"
+        android:layout_width="313dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:textColorHint="@android:color/holo_orange_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.439" />
+
+    <EditText
+        android:id="@+id/signuppass"
+        android:layout_width="311dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="PassWord"
+        android:inputType="textPassword"
+        android:textColorHint="@android:color/holo_orange_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signupname"
+        app:layout_constraintVertical_bias="0.104" />
+
+    <Button
+        android:id="@+id/signupforcustomer"
+        android:layout_width="312dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="72dp"
+        android:background="@android:color/holo_orange_light"
+        android:onClick="assigncustomertodatabase"
+        android:text="signup"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:textColorHint="@android:color/holo_orange_light"
+        app:layout_constraintBottom_toTopOf="@+id/signupforcustomer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signuppass"
+        app:layout_constraintVertical_bias="0.202" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="301dp"
+        android:layout_height="46dp"
+        android:text="I agree to The Policy"
+        android:textColor="@android:color/holo_orange_light"
+        android:textColorHint="@android:color/holo_orange_light"
+        app:layout_constraintBottom_toTopOf="@+id/signupforcustomer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+        app:layout_constraintVertical_bias="0.614" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
