@@ -3,7 +3,9 @@ package com.example.double_click_m_project;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class homepage_for_customer extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class homepage_for_customer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

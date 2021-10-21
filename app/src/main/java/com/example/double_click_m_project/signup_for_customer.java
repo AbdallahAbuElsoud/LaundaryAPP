@@ -9,36 +9,38 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.text.BreakIterator;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class signup_for_customer extends Activity {
-   EditText uname=(EditText) findViewById(R.id.signupname2);
-    EditText upass=(EditText) findViewById(R.id.signuppass);
-
+public class signup_for_customer extends AppCompatActivity {
+    SQLiteDatabase DB ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signup_for_customer
+        setContentView(R.layout.signup_for_customer);
 
+        }
 
-        );
-    }
+    public void signupcustomer (View view){
+        EditText cname =findViewById(R.id.namecustomer);
+        EditText cemail = findViewById(R.id.emailcustomer);
+        EditText cphone = findViewById(R.id.cusstomerPhone);
+        EditText cpassword = findViewById(R.id.signuppass);
 
-    public void assigncustomertodatabase (View view){
-        SQLiteDatabase mydb = openOrCreateDatabase("DoubleClick", MODE_PRIVATE, null);
-        mydb.execSQL("CREATE TABLE IF NOT EXISTS Customer(username VARCHAR , email VARCHAR , number VARCHAR);");
-        mydb.execSQL("CREATE TABLE IF NOT EXISTS users(username VARCHAR , password VARCHAR , role VARCHAR);");
 
         switch (view.getId()){
             case R.id.signupforcustomer:
-                Toast.makeText(getApplicationContext(), "hi : "+uname.getText(), Toast.LENGTH_LONG).show();
-                mydb.execSQL("INSERT INTO users VALUES ('"+uname.getText()+"'"+"'"+upass.getText()+"'"+"'C'"+");");
-
-                Intent i=new Intent(this, homepage_for_customer.class);
-                startActivity(i);
+                Toast.makeText(getApplicationContext(),cname.getText(),Toast.LENGTH_LONG).show();
+               if (cname.getText().toString().equals("") || cemail.getText().toString().equals("") || cpassword.getText().toString().equals("") || cphone.getText().toString().equals("")){
+                   Toast.makeText(getApplicationContext(),"fill the info",Toast.LENGTH_LONG).show();
+               }else {
+                   DB.execSQL("INSERT INTO customer VALUES ('"+cname.getText()+"'"+",'"+cemail.getText()+"'"+",'"+cphone.getText()+"'"+");");
+                   DB.execSQL("INSERT INTO users VALUES ('"+cname.getText()+"'"+",'"+cemail.getText()+"'"+",'"+cpassword.getText()+"'"+",'customer'"+");");
+                   Toast.makeText(getApplicationContext(),"saved",Toast.LENGTH_LONG).show();
+                   Intent i=new Intent(this, MainActivity.class);
+                   startActivity(i);
+               }
                 break;
         }
     }
-
 }

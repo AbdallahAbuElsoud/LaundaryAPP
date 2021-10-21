@@ -11,29 +11,9 @@
     android:layout_height="match_parent"
     android:background="#444145"
     tools:context=".MainActivity">
-
-
-
-
-
-
-
     ]]>
 
-    <EditText
-        android:id="@+id/signupname2"
-        android:layout_width="313dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:hint="User Name"
-        android:inputType="textPersonName"
-        android:textColorHint="@android:color/holo_orange_light"
-        app:layout_constraintBottom_toTopOf="@+id/signupname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome"
-        app:layout_constraintVertical_bias="0.366" />
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -65,9 +45,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.034" />
+    <EditText
+        android:id="@+id/namecustomer"
+        android:layout_width="313dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="User Name"
+        android:inputType="textPersonName"
+        android:textColorHint="@android:color/holo_orange_light"
+        app:layout_constraintBottom_toTopOf="@+id/emailcustomer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome"
+        app:layout_constraintVertical_bias="0.366" />
 
     <EditText
-        android:id="@+id/signupname"
+        android:id="@+id/emailcustomer"
         android:layout_width="313dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -93,7 +87,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupname"
+        app:layout_constraintTop_toBottomOf="@+id/emailcustomer"
         app:layout_constraintVertical_bias="0.104" />
 
     <Button
@@ -102,7 +96,7 @@
         android:layout_height="39dp"
         android:layout_marginBottom="72dp"
         android:background="@android:color/holo_orange_light"
-        android:onClick="assigncustomertodatabase"
+        android:onClick="signupcustomer"
         android:text="signup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +105,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/cusstomerPhone"
         android:layout_width="310dp"
         android:layout_height="45dp"
         android:ems="10"
@@ -135,7 +129,7 @@
         app:layout_constraintBottom_toTopOf="@+id/signupforcustomer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+        app:layout_constraintTop_toBottomOf="@+id/cusstomerPhone"
         app:layout_constraintVertical_bias="0.614" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
