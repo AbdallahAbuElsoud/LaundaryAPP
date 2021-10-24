@@ -15,7 +15,7 @@ public class signup_for_customer extends AppCompatActivity {
     SQLiteDatabase DB ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        DB= openOrCreateDatabase("DoubleClick", MODE_PRIVATE, null);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_for_customer);
 

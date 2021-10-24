@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void loginPage (View view){
+        EditText PersonName = findViewById(R.id.PersonName);
+        EditText PersonPassword = findViewById(R.id.PersonPassword);
+        int flag =0;
+        String role="" ;
         switch (view.getId()) {
             case R.id.signupbtn:
                 Toast.makeText(getApplicationContext(), "signup", Toast.LENGTH_LONG).show();
@@ -32,8 +37,38 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 break;
             case R.id.loginbtn :
+                if (PersonName.getText().toString().equals("")||PersonPassword.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "Please fill the Info", Toast.LENGTH_LONG).show();
+                }
+                Cursor myCursor = DB.rawQuery("select name,password,role from users", null);
 
-                Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_LONG).show();
+                if (myCursor.moveToFirst()) {
+                    do {
+
+
+                        if (PersonName.getText().toString().equals(myCursor.getString(0))) {
+                            if (PersonPassword.getText().toString().equals(myCursor.getString(1))) {
+                                PersonName.setText("");
+                                PersonPassword.setText("");
+                                flag = 1;
+                                role=myCursor.getString(2);
+                            }
+                        }
+
+                    } while (myCursor.moveToNext());
+
+                    if (flag == 1 ) {
+                        if (role.equals("customer")) {
+                            Intent z = new Intent(this, homepage_for_customer.class);
+                            startActivity(z);
+                        }else
+                        {
+                            Toast.makeText(getApplicationContext(), "another users will come Soon", Toast.LENGTH_LONG).show();
+                        }
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Wrong UserName or Password", Toast.LENGTH_LONG).show();
+                    }
+                }
                 break;
 
         }
